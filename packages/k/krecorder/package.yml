@@ -1,0 +1,26 @@
+name       : krecorder
+version    : 24.05.0
+release    : 1
+source     :
+    - https://download.kde.org/stable/release-service/24.05.0/src/krecorder-24.05.0.tar.xz : 39352f8aa380abaef5ce93cf9c3b4ef3e35dffa69ceb824091e42d8bf7138f32
+homepage   : https://apps.kde.org/krecorder/
+license    : GPL-3.0-or-later
+component  : desktop.kde
+summary    : Audio Recorder
+description: |
+    Recorder is a simple, cross-platform audio recording application.
+builddeps  :
+    - pkgconfig(Qt6Core)
+    - pkgconfig(Qt6Multimedia)
+    - pkgconfig(Qt6Qml)
+    - pkgconfig(Qt6Svg)
+    - extra-cmake-modules
+    - kf6-kcoreaddons-devel
+    - kf6-ki18n-devel
+    - kirigami-addons-devel
+setup      : |
+    %cmake_ninja
+build      : |
+    %ninja_build
+install    : |
+    %ninja_install
