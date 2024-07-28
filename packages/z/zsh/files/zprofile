@@ -2,6 +2,4 @@ if [ -f /etc/zprofile ]; then
     source /etc/zprofile
 elif [ -f /etc/zsh/zprofile ]; then
     source /etc/zsh/zprofile
-else
-    emulate sh -c 'source /etc/profile'
 fi
