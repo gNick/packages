@@ -1,25 +1,29 @@
 name       : starship
-version    : 1.19.0
-release    : 17
+version    : 1.20.0
+release    : 19
 source     :
-    - https://github.com/starship/starship/archive/refs/tags/v1.19.0.tar.gz : cf789791b5c11d6d7a00628590696627bb8f980e3d7c7a0200026787b08aba37
+    - https://github.com/starship/starship/archive/refs/tags/v1.20.0.tar.gz : ea73a5463d30c5d5dfd473b11a27f2f25942635121dc3fc89297eeb22755ce8f
 homepage   : https://starship.rs/
 license    : ISC
 component  : system.utils
 networking : yes
 summary    : The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 description: |
-    Fast: it's fast – really really fast!
-    Customizable: configure every aspect of your prompt.
-    Universal: works on any shell, on any operating system.
-    Intelligent: shows relevant information at a glance.
-    Feature rich: support for all your favorite tools.
-    Easy: quick to install – start using it in minutes.
+    Works on the most common shells on the most common operating systems. Use it everywhere!
+
+    Brings the best-in-class speed and safety of Rust, to make your prompt as quick and reliable as possible.
+
+    Every little detail is customizable to your liking, to make this prompt as minimal or feature-rich as you'd like it to be.
 builddeps  :
     - rust
+checkdeps  :
+    - git
 setup      : |
     %cargo_fetch
 build      : |
     %cargo_build
 install    : |
     %cargo_install
+check      : |
+    export TERM=xterm-256color
+    %cargo_test -- --skip "modules::username::tests::show_always_false"
