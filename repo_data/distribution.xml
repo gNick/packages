@@ -2552,5 +2552,8 @@
 		<Package>toluapp-dbginfo</Package>
 		<Package>hal-flash</Package>
 		<Package>hal-flash-dbginfo</Package>
+		<Package>fbreader</Package>
+		<Package>fbreader-devel</Package>
+		<Package>fbreader-dbginfo</Package>
 	</Obsoletes>
 </PISI>
